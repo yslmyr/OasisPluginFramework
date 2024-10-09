@@ -32,6 +32,8 @@ requires
   rtl;
 
 contains
-  oasis.core.dependency in '..\..\src\DI\oasis.core.dependency.pas';
+  oasis.core.dependency in '..\..\src\DI\oasis.core.dependency.pas',
+  oasis.core.appsvrc in '..\..\src\DI\oasis.core.appsvrc.pas',
+  oasis.core.plugin.manager in '..\..\src\PM\oasis.core.plugin.manager.pas';
 
 end.

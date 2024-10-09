@@ -131,6 +131,8 @@
         </DelphiCompile>
         <DCCReference Include="rtl.dcp"/>
         <DCCReference Include="..\..\src\DI\oasis.core.dependency.pas"/>
+        <DCCReference Include="..\..\src\DI\oasis.core.appsvrc.pas"/>
+        <DCCReference Include="..\..\src\PM\oasis.core.plugin.manager.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
