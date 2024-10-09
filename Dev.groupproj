@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BFF0A2A8-3531-41B5-9225-6A59606C21A6}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="packages\D12\OasisPluginFramework.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="test\Test.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OasisPluginFramework">
+        <MSBuild Projects="packages\D12\OasisPluginFramework.dproj"/>
+    </Target>
+    <Target Name="OasisPluginFramework:Clean">
+        <MSBuild Projects="packages\D12\OasisPluginFramework.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OasisPluginFramework:Make">
+        <MSBuild Projects="packages\D12\OasisPluginFramework.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Test">
+        <MSBuild Projects="test\Test.dproj"/>
+    </Target>
+    <Target Name="Test:Clean">
+        <MSBuild Projects="test\Test.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Test:Make">
+        <MSBuild Projects="test\Test.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OasisPluginFramework;Test"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OasisPluginFramework:Clean;Test:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OasisPluginFramework:Make;Test:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
